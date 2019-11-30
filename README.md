@@ -2,14 +2,28 @@
 
 <a href="https://github.com/ambv/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
 
-- [repoconf](#cookiecutterprojectname)
+Script to add common repo configuration files.
+
+- [repoconf](#repoconf)
   - [Usage](#usage)
   - [Install](#install)
 
 ## Usage
 
+Adds template config files to a repo. Run in the destination i.e. target repo to add these files.
+
 ```bash
 repoconf --help
+
+usage: repoconf [-h] {python,py,javascript,js,golang,go}
+
+Get language repo setup
+
+positional arguments:
+  {python,py,javascript,js,golang,go}
+
+optional arguments:
+  -h, --help            show this help message and exit
 ```
 
 ## Install

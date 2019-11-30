@@ -14,6 +14,6 @@ setup(
     author_email="samatkins@outlook.com",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=["Click==7.0"],
+    install_requires=[],
     entry_points={"console_scripts": ["repoconf=repoconf.main:main"]},
 )
