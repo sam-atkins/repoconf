@@ -13,6 +13,7 @@ flake8 = "^3.7"
 mypy = "^0.740.0"
 pylint = "^2.4"
 pytest-cov = "^2.8"
+black = {version = "^18.3-alpha.0",allows-prereleases = true}
 
 [build-system]
 requires = ["poetry>=0.12"]
