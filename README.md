@@ -29,8 +29,8 @@ optional arguments:
 ## Install
 
 ```bash
-# create a venv
-virtualenv -p python3.7 venv
+# create a virtual environment i.e. venv
+python3 -m virtualenv -p python3.7 venv
 
 # activate the venv
 source venv/bin/activate
@@ -44,5 +44,5 @@ After the install command, not only will the dependencies be installed but the s
 To setup the script to run from any directory, run this in your home directory:
 
 ```
-pip3 install --editable /Users/{username}/path/to/repoconf
+python3 -m pip install --user --editable /Users/{username}/path/to/repoconf
 ```
