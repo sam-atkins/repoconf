@@ -19,9 +19,11 @@ If adding config for a language not listed in COMMAND_LINE_ARG_CHOICES then add 
 this list
 """
 import os
+from pathlib import Path
+
 
 COMMAND_LINE_ARG_CHOICES = ["python", "py", "javascript", "js", "golang", "go"]
-HOME = os.environ["HOME"]
+HOME = str(Path.home())
 JSON_INDENT = 2
 JSON_SORT_KEYS = True
 VSCODE_SETTINGS_FILE_PATH = "./.vscode/settings.json"
@@ -39,20 +41,6 @@ MANDATORY_KEYS = [
 ]
 
 CONFIG = [
-    {
-        "config_name": "py_formatter",
-        "description": "",
-        "language": ["python", "py"],
-        "input_str": "black is the default. Replace with yapf formatting? (yes | no)?",
-        "input_validation": ["yes", "no", "y", "n"],
-        "config_format_JSON": True,
-        "file_config_template": {
-            "python.formatting.provider": "yapf",
-            "[python]": {"editor.formatOnSave": False, "editor.formatOnPaste": True},
-        },
-        "config_destination_path": VSCODE_SETTINGS_FILE_PATH,
-        "output_message": "",
-    },
     {
         "config_name": "pyright",
         "description": "",
@@ -77,13 +65,13 @@ CONFIG = [
         "input_str": "add .editorconfig (yes | no)?",
         "input_validation": ["yes", "no", "y", "n"],
         "config_format_JSON": False,
-        "file_config_template": f"{HOME}/code/repoconf/repoconf/repo_config_templates/editorconfig.template",  # noqa E501
+        "file_config_template": f"{HOME}/code/repo-dotfiles/.editorconfig",
         "config_destination_path": ".editorconfig",
         "output_message": "Be sure to update the settings specific to the repo",
     },
     {
         "config_name": "vsc_python_dev_requirements",
-        "description": "A requirements[-dev].txt of Python requirements to enhance productivity in VS Code",  # noqa E501
+        "description": "A requirements[-dev].txt of Python dev requirements to enhance productivity in VS Code",  # noqa E501
         "language": ["python", "py"],
         "input_str": "add Python deps for VS Code (yes | no)?",
         "input_validation": ["yes", "no", "y", "n"],
@@ -99,19 +87,8 @@ CONFIG = [
         "input_str": "add setup.cfg? (yes | no)?",
         "input_validation": ["yes", "no", "y", "n"],
         "config_format_JSON": False,
-        "file_config_template": f"{HOME}/code/repoconf/repoconf/repo_config_templates/setup.cfg.template",  # noqa E501
+        "file_config_template": f"{HOME}/code/repo-dotfiles/setup.cfg",
         "config_destination_path": "setup.cfg",
-        "output_message": "",
-    },
-    {
-        "config_name": "vscode_theme_config_py",
-        "description": "Adds theme config to VS Code for a Python repo",
-        "language": ["py", "python"],
-        "input_str": "change theme for Python dev? (yes | no)?",
-        "input_validation": ["yes", "no", "y", "n"],
-        "config_format_JSON": True,
-        "file_config_template": {"workbench.colorTheme": "Monokai"},
-        "config_destination_path": VSCODE_SETTINGS_FILE_PATH,
         "output_message": "",
     },
 ]

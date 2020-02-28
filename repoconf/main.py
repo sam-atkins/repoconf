@@ -1,11 +1,5 @@
 """
-Adds template config files to a repo. Run in the destination repo to add these files.
-
-#################### SETUP ####################
-
-    Requires a HOME environment variable
-
-###############################################
+Run in the destination repo to add config files e.g. repoconf py
 """
 import argparse
 import json
